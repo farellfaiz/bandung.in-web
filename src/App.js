@@ -10,10 +10,10 @@ import {
   Menu,
   MenuButton,
   MenuList,
+  MenuGroup,
   MenuItem,
   Icon,
   Link,
-  useBreakpointValue
 } from '@chakra-ui/react'
 import { DownloadIcon, ChevronDownIcon } from '@chakra-ui/icons'
 import { AiFillAndroid, AiFillApple, AiFillGithub, AiOutlineMobile, AiOutlineGlobal } from 'react-icons/ai';
@@ -103,9 +103,9 @@ const App = () => {
               from the Faculty of Earth Science and Technology, Bandung Institute
               of Technology.
             </Text>
-            <Box display="flex" justifyContent="flex-start" alignItems="center" mb={10}>
+            <Box display="flex" justifyContent={{ base: 'center', md: 'flex-start' }} alignItems="center" mb={10}>
               <Menu>
-                <MenuButton as={Button} leftIcon={<DownloadIcon/>} rightIcon={<ChevronDownIcon /> }>
+                <MenuButton shadow='md' as={Button} leftIcon={<DownloadIcon/>} rightIcon={<ChevronDownIcon /> }>
                   Download
                 </MenuButton>
                 <MenuList>
@@ -120,22 +120,24 @@ const App = () => {
                 </MenuList>
               </Menu>
               <Menu>
-                <MenuButton ml={3} as={Button} leftIcon={<AiFillGithub/>} rightIcon={<ChevronDownIcon /> }>
-                  View on Github
+                <MenuButton shadow='md' ml={3} as={Button}  rightIcon={<ChevronDownIcon /> }  >
+                  <Icon as={AiFillGithub} />
                 </MenuButton>
                 <MenuList>
-                  <Link href='https://github.com/farellfaiz/bandung.in' isExternal>
-                    <MenuItem minH='48px'>
-                      <Icon as={AiOutlineMobile} />
-                      <Text ml='3'>Application</Text>
-                    </MenuItem>
-                  </Link>
-                  <Link href='https://github.com/farellfaiz/bandung.in-web' isExternal>
-                    <MenuItem minH='40px'>
-                      <Icon as={AiOutlineGlobal} />
-                      <Text ml='3'>Website</Text>
-                    </MenuItem>
-                  </Link>
+                  <MenuGroup title='View on Github'>
+                    <Link href='https://github.com/farellfaiz/bandung.in' isExternal>
+                      <MenuItem minH='48px'>
+                        <Icon as={AiOutlineMobile} />
+                        <Text ml='3'>Application</Text>
+                      </MenuItem>
+                    </Link>
+                    <Link href='https://github.com/farellfaiz/bandung.in-web' isExternal>
+                      <MenuItem minH='40px'>
+                        <Icon as={AiOutlineGlobal} />
+                        <Text ml='3'>Website</Text>
+                      </MenuItem>
+                    </Link>
+                  </MenuGroup>
                 </MenuList>
               </Menu>
             </Box>
