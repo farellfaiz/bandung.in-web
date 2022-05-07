@@ -313,12 +313,12 @@ const App = () => {
               height="100px"
               width="100px"
               mr={5}
-              src="https://massabumi21.id/img/logo.png"
+              src="https://github.com/farellfaiz/bandung.in/blob/master/assets/itb.png?raw=true"
             />
             <Image
               height="100px"
               width="100px"
-              src="https://github.com/farellfaiz/bandung.in/blob/master/assets/itb.png?raw=true"
+              src="https://massabumi21.id/img/logo.png"
             />
           </Box>
           <Box>
