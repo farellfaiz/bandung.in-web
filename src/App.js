@@ -177,7 +177,7 @@ const App = () => {
                 </MenuList>
               </Menu>
             </Box>
-            <Text color='blackAlpha.500' fontStyle='italic' mb={10} size='sm'>Allow uninstall from unknown source and install anyway if Play Protect warning appears.</Text>
+            <Text color='blackAlpha.500' fontStyle='italic' mb={10} size='sm'>Allow install from unknown source and install anyway if Play Protect warning appears.</Text>
           </Box>
         </Box>
         <Box>
