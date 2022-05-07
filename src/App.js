@@ -153,7 +153,7 @@ const App = () => {
               from the Faculty of Earth Science and Technology, Bandung Institute
               of Technology.
             </Text>
-            <Box display="flex" justifyContent={{ base: 'center', md: 'flex-start' }} alignItems="center" mb={10}>
+            <Box display="flex" justifyContent={{ base: 'center', md: 'flex-start' }} alignItems="center" mb={8}>
               <DownloadButton />
               <Menu>
                 <MenuButton shadow='md' ml={3} as={Button}  rightIcon={<ChevronDownIcon /> }  >
@@ -177,6 +177,7 @@ const App = () => {
                 </MenuList>
               </Menu>
             </Box>
+            <Text color='blackAlpha.500' fontStyle='italic' mb={10} size='sm'>Allow uninstall from unknown source and install anyway if Play Protect warning appears.</Text>
           </Box>
         </Box>
         <Box>
