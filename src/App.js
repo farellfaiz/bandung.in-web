@@ -38,7 +38,7 @@ const DownloadButton = () => {
         </MenuButton>
         <MenuList>
           <MenuGroup title='Download mobile app'>
-            <Link href='https://expo.dev/artifacts/eas/xjxF9AkiLLbJkB8Wiaq5R.apk'>
+            <Link href='https://bit.ly/DownloadBandunginV1'>
               <MenuItem minH='48px'>
                 <Icon as={AiFillAndroid} />
                 <Text ml='3'>Android</Text>
