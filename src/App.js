@@ -38,7 +38,7 @@ const DownloadButton = () => {
         </MenuButton>
         <MenuList>
           <MenuGroup title='Download mobile app'>
-            <Link href='https://bit.ly/DownloadBandunginV1'>
+            <Link href='https://bit.ly/DownloadBandungin'>
               <MenuItem minH='48px'>
                 <Icon as={AiFillAndroid} />
                 <Text ml='3'>Android</Text>
