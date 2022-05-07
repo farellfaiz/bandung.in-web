@@ -14,9 +14,73 @@ import {
   MenuItem,
   Icon,
   Link,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  useDisclosure,
 } from '@chakra-ui/react'
-import { DownloadIcon, ChevronDownIcon } from '@chakra-ui/icons'
+import { DownloadIcon, ChevronDownIcon, ArrowForwardIcon } from '@chakra-ui/icons'
 import { AiFillAndroid, AiFillApple, AiFillGithub, AiOutlineMobile, AiOutlineGlobal } from 'react-icons/ai';
+import { SiExpo } from 'react-icons/si'
+import { HiOutlineCash } from 'react-icons/hi'
+
+const DownloadButton = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure()
+  return (
+    <>
+      <Menu>
+        <MenuButton shadow='md' as={Button} leftIcon={<DownloadIcon/>} rightIcon={<ChevronDownIcon /> }>
+          Download
+        </MenuButton>
+        <MenuList>
+          <MenuGroup title='Download mobile app'>
+            <Link href='https://expo.dev/artifacts/eas/xjxF9AkiLLbJkB8Wiaq5R.apk'>
+              <MenuItem minH='48px'>
+                <Icon as={AiFillAndroid} />
+                <Text ml='3'>Android</Text>
+              </MenuItem>
+            </Link>
+            <MenuItem onClick={onOpen} minH='40px'>
+              <Icon as={AiFillApple} />
+              <Text ml='3'>iOS</Text>
+            </MenuItem>
+          </MenuGroup>
+          <MenuGroup title='View on Expo'>
+            <Link href='https://expo.dev/@farellfaiz/bandung-in' isExternal>
+              <MenuItem minH='48px'>
+                <Icon as={SiExpo} />
+                <Text ml='3'>Expo Go</Text>
+              </MenuItem>
+            </Link>
+          </MenuGroup>
+        </MenuList>
+      </Menu>
+      <Modal isOpen={isOpen} onClose={onClose} size="sm">
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader><Icon as={HiOutlineCash} mr={2} /> Sponsor Our Project</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <Text>Deploying applications for iOS requires a plenty of money. Help us by sponsoring this project! You'll also receive benefits and credits in this project as a sponsor.</Text>
+          </ModalBody>
+
+          <ModalFooter>
+            <Button onClick={onClose} variant='ghost'>Not this time</Button>
+            <Link href='https://wa.me/6285156972328' isExternal>
+              <Button onClick={onClose} ml={3} bg='black' color='white' _active={{ bg: 'blackAlpha.800' }} _hover={{ bg: 'blackAlpha.500' }} rightIcon={<ArrowForwardIcon />}  mr={3}>
+                Let's go!
+              </Button>
+            </Link>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
+    </>
+  )
+}
 
 const App = () => {
   return (
@@ -41,21 +105,7 @@ const App = () => {
             width="50px"
             src="https://i.ibb.co/1GKb6Mj/icon-white.png"
           />
-          <Menu>
-            <MenuButton as={Button} leftIcon={<DownloadIcon/>} rightIcon={<ChevronDownIcon /> }>
-              Download
-            </MenuButton>
-            <MenuList>
-              <MenuItem minH='48px'>
-                <Icon as={AiFillAndroid} />
-                <Text ml={3}>Android</Text>
-              </MenuItem>
-              <MenuItem minH='40px'>
-                <Icon as={AiFillApple} />
-                <Text ml={3}>iOS</Text>
-              </MenuItem>
-            </MenuList>
-          </Menu>
+          <DownloadButton />
         </Box>
         <Box
           display="flex"
@@ -104,21 +154,7 @@ const App = () => {
               of Technology.
             </Text>
             <Box display="flex" justifyContent={{ base: 'center', md: 'flex-start' }} alignItems="center" mb={10}>
-              <Menu>
-                <MenuButton shadow='md' as={Button} leftIcon={<DownloadIcon/>} rightIcon={<ChevronDownIcon /> }>
-                  Download
-                </MenuButton>
-                <MenuList>
-                  <MenuItem minH='48px'>
-                    <Icon as={AiFillAndroid} />
-                    <Text ml='3'>Android</Text>
-                  </MenuItem>
-                  <MenuItem minH='40px'>
-                    <Icon as={AiFillApple} />
-                    <Text ml='3'>iOS</Text>
-                  </MenuItem>
-                </MenuList>
-              </Menu>
+              <DownloadButton />
               <Menu>
                 <MenuButton shadow='md' ml={3} as={Button}  rightIcon={<ChevronDownIcon /> }  >
                   <Icon as={AiFillGithub} />
