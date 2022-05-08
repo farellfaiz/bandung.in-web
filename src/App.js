@@ -38,7 +38,7 @@ const DownloadButton = () => {
         </MenuButton>
         <MenuList>
           <MenuGroup title='Download mobile app'>
-            <Link href='https://www66.zippyshare.com/d/lgKdAY3n/47284/bandungin.apk'>
+            <Link href='https://github.com/farellfaiz/bandung.in/releases/download/v1.0.1/bandung.in_v1.0.1.apk'>
               <MenuItem minH='48px'>
                 <Icon as={AiFillAndroid} />
                 <Text ml='3'>Android</Text>
