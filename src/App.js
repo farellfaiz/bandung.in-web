@@ -103,7 +103,7 @@ const App = () => {
           <Image
             height="50px"
             width="50px"
-            src="https://i.ibb.co/1GKb6Mj/icon-white.png"
+            src="https://github.com/farellfaiz/bandung.in/blob/master/assets/icon-white.png?raw=true"
           />
           <DownloadButton />
         </Box>
@@ -123,7 +123,7 @@ const App = () => {
           >
             <Image
               width={230}
-              src="https://i.ibb.co/WvNPCBv/mockup-bandung-in.png"
+              src="https://github.com/farellfaiz/bandung.in-web/blob/master/public/mockup-bandung.in.png?raw=true"
             />
           </Box>
           <Box width={{ base: '100%', md: '50%' }} lineHeight="normal">
