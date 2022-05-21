@@ -18,15 +18,20 @@ import {
   ModalOverlay,
   ModalContent,
   ModalHeader,
+  Stack,
   ModalFooter,
   ModalBody,
+  IconButton,
   ModalCloseButton,
   useDisclosure,
 } from '@chakra-ui/react'
 import { DownloadIcon, ChevronDownIcon, ArrowForwardIcon } from '@chakra-ui/icons'
 import { AiFillAndroid, AiFillApple, AiFillGithub, AiOutlineMobile, AiOutlineGlobal } from 'react-icons/ai';
 import { SiExpo } from 'react-icons/si'
-import { HiOutlineCash } from 'react-icons/hi'
+import { HiOutlineCash, HiCode } from 'react-icons/hi'
+import { FaChevronRight, FaHandHoldingUsd, FaUsers, FaMoneyBillWave } from 'react-icons/fa'
+import { MdEmail } from 'react-icons/md'
+import { IoFootstepsSharp } from 'react-icons/io5'
 
 const DownloadButton = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
@@ -59,19 +64,41 @@ const DownloadButton = () => {
           </MenuGroup>
         </MenuList>
       </Menu>
-      <Modal isOpen={isOpen} onClose={onClose} size="sm">
+      <Modal isOpen={isOpen} onClose={onClose} size='md' >
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader><Icon as={HiOutlineCash} mr={2} /> Sponsor Our Project</ModalHeader>
+          <ModalHeader><Icon as={AiFillApple} mr={2} /> Download for iOS</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <Text>Deploying applications for iOS requires a plenty of money. Help us by sponsoring this project! You'll also receive benefits and credits in this project as a sponsor.</Text>
+            <Box flex='1' px={4}>
+              <ol>
+                <li>
+                  <Box display='flex' w='100%' flexDir='row' justifyContent='space-between' alignItems='center'>
+                    <Text mr="4">Download <b>Expo Go</b> in App Store</Text>
+                    <Link href='https://apps.apple.com/us/app/expo-go/id982107779' isExternal>
+                      <IconButton aria-label='Download Expo Go' icon={<DownloadIcon />}  />
+                    </Link>
+                  </Box>
+                </li>
+                <li>
+                  <Box my='4' display='flex' w='100%' flexDir='row' justifyContent='space-between' alignItems='center'>
+                    <Text mr="4">Scan the QR code below or tap the arrow icon to open the app</Text>
+                    <Link href='exp://exp.host/@farellfaiz/bandung-in?release-channel=default'>
+                      <IconButton aria-label='Open Bandung.in' icon={<FaChevronRight />}  />
+                    </Link>
+                  </Box>
+                </li>
+              </ol>
+              <Image 
+                src='https://qr.expo.dev/expo-go?owner=farellfaiz&slug=bandung-in&releaseChannel=default&host=exp.host'
+              />
+            </Box>
           </ModalBody>
 
           <ModalFooter>
-            <Button onClick={onClose} variant='ghost'>Not this time</Button>
-            <Link href='https://wa.me/6285156972328' isExternal>
-              <Button onClick={onClose} ml={3} bg='black' color='white' _active={{ bg: 'blackAlpha.800' }} _hover={{ bg: 'blackAlpha.500' }} rightIcon={<ArrowForwardIcon />}  mr={3}>
+            <Text>Help us to deploy as a standalone app</Text>
+            <Link href='https://saweria.co/bandungin' isExternal>
+              <Button onClick={onClose} ml={3} bg='black' color='white' _active={{ bg: 'blackAlpha.900' }} _hover={{ bg: 'blackAlpha.700' }} rightIcon={<ArrowForwardIcon />} leftIcon={<HiOutlineCash />}  mr={3}>
                 Let's go!
               </Button>
             </Link>
@@ -338,12 +365,144 @@ const App = () => {
             <Text color="blackAlpha.600">16321241</Text>
           </Box>
         </Box>
+        <Box backgroundColor="#f3f3f3">
+          <Box
+            display="flex"
+            justifyContent="space-around"
+            alignItems="center"
+            py="50px"
+            px="40px"
+            flexDirection={{ base: 'column', md: 'row' }}
+          >
+            <Box
+              display="flex"
+              flexDirection="column"
+              justifyContent="flex-start"
+              alignItems="center"
+            >
+              <Stack spacing={6} alignItems="center">
+                <Heading size="lg">Sponsor our Project</Heading>
+                <Box
+                  display="flex"
+                  justifyContent="center"
+                  alignItems="center"
+                  backgroundColor="#000000"
+                  borderRadius="50%"
+                  width="80px"
+                  height="80px"
+                >
+                  <Icon boxSize='30px' color='white' as={FaMoneyBillWave} />
+                </Box>
+                <Text textAlign="justify">
+                  Deploying standalone app for iOS, publishing it to Play Store/App
+                  Store, also upgrading services and features requires a plenty of
+                  money. Help us by sponsoring this project! You'll also receive
+                  benefits and credits in this project as a sponsor.
+                </Text>
+                <Box>
+                  <Text
+                    textAlign="center"
+                    mb="7px"
+                    fontStyle="italic"
+                    color="blackAlpha.600"
+                  >
+                    become our sponsor
+                  </Text>
+                  <Stack spacing={2} isInline>
+                    <Link href='https://saweria.co/bandungin' isExternal>
+                      <Button
+                        variant="solid"
+                        size="md"
+                        colorScheme='yellow'
+                        leftIcon={<FaHandHoldingUsd />}
+                      >
+                        Donate
+                      </Button>
+                    </Link>
+                    <Link href='https://wa.me/6285156972328'>
+                      <Button
+                        variant="solid"
+                        size="md"
+                        bg='black' color='white' _active={{ bg: 'blackAlpha.900' }} _hover={{ bg: 'blackAlpha.800' }}
+                        leftIcon={<MdEmail />}
+                      >
+                        Contact Us
+                      </Button>
+                    </Link>
+                  </Stack>
+                </Box>
+              </Stack>
+            </Box>
+            <Box
+              backgroundColor="blackAlpha.400"
+              height={{ base: '1px', md: '270px' }}
+              width={{ base: '10%', md: '2px' }}
+              borderRadius='6px'
+              my={{ base: '40px', md: '0' }}
+              mx='35px'
+            />
+            <Box>
+              <Stack spacing={6} alignItems="center">
+                <Heading size="lg">Become Contributor</Heading>
+                <Box
+                  display="flex"
+                  justifyContent="center"
+                  alignItems="center"
+                  backgroundColor="#000000"
+                  borderRadius="50%"
+                  width="80px"
+                  height="80px"
+                >
+                  <Icon boxSize='30px' color='white' as={FaUsers} />
+                </Box>
+                <Text textAlign="justify">
+                  Bandung.in is open source. Help us by contributing in Github as a
+                  Developer or submitting places as a Bandung Explorer! You'll also
+                  receive benefits and credits in this project as a Developer or
+                  Bandung Explorer.
+                </Text>
+                <Box>
+                  <Text
+                    textAlign="center"
+                    mb="7px"
+                    fontStyle="italic"
+                    color="blackAlpha.600"
+                  >
+                    choose your path
+                  </Text>
+                  <Stack spacing={2} isInline>
+                    <Link href='https://forms.gle/x8zg7WycQz5aLGvv6' isExternal>
+                      <Button
+                        variant="solid"
+                        size="md"
+                        colorScheme="yellow"
+                        leftIcon={<IoFootstepsSharp />}
+                      >
+                        Explorer
+                      </Button>
+                    </Link>
+                    <Link href='https://github.com/farellfaiz/bandung-in/' isExternal>
+                      <Button
+                        variant="solid"
+                        size="md"
+                        bg='black' color='white' _active={{ bg: 'blackAlpha.900' }} _hover={{ bg: 'blackAlpha.800' }}
+                        leftIcon={<HiCode />}
+                      >
+                        Developer
+                      </Button>
+                    </Link>
+                  </Stack>
+                </Box>
+              </Stack>
+            </Box>
+          </Box>
+        </Box>
         <Box>
           <Box
             display="flex"
             justifyContent="center"
             alignItems="center"
-            pt={6}
+            pt={10}
             pb={10}
           >
             <Image
