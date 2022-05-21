@@ -365,14 +365,14 @@ const App = () => {
             <Text color="blackAlpha.600">16321241</Text>
           </Box>
         </Box>
-        <Box backgroundColor="#f3f3f3">
+        <Box backgroundColor="#f3f3f3" marginY='100px' marginX={{ base: '40px', lg:'auto' }} borderRadius='10px' maxWidth='1100px' minHeight='355px' boxShadow="-1px 2px 17px 2px rgba(0,0,0,0.15)">
           <Box
             display="flex"
             justifyContent="space-around"
             alignItems="center"
             py="50px"
             px="40px"
-            flexDirection={{ base: 'column', md: 'row' }}
+            flexDirection={{ base: 'column', lg: 'row' }}
           >
             <Box
               display="flex"
@@ -381,7 +381,7 @@ const App = () => {
               alignItems="center"
             >
               <Stack spacing={6} alignItems="center">
-                <Heading size="lg">Sponsor our Project</Heading>
+                <Heading size="lg" textAlign='center'>Sponsor our Project</Heading>
                 <Box
                   display="flex"
                   justifyContent="center"
@@ -435,15 +435,15 @@ const App = () => {
             </Box>
             <Box
               backgroundColor="blackAlpha.400"
-              height={{ base: '1px', md: '270px' }}
-              width={{ base: '10%', md: '2px' }}
+              height={{ base: '1px', lg: '270px' }}
+              width={{ base: '10%', lg: '2px' }}
               borderRadius='6px'
-              my={{ base: '40px', md: '0' }}
+              my={{ base: '40px', lg: '0' }}
               mx='35px'
             />
             <Box>
               <Stack spacing={6} alignItems="center">
-                <Heading size="lg">Become Contributor</Heading>
+                <Heading size="lg" textAlign='center'>Become Contributor</Heading>
                 <Box
                   display="flex"
                   justifyContent="center"
