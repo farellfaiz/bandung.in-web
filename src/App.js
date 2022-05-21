@@ -406,7 +406,7 @@ const App = () => {
                     fontStyle="italic"
                     color="blackAlpha.600"
                   >
-                    become our sponsor
+                    be our sponsor
                   </Text>
                   <Stack spacing={2} isInline>
                     <Link href='https://saweria.co/bandungin' isExternal>
@@ -443,7 +443,7 @@ const App = () => {
             />
             <Box>
               <Stack spacing={6} alignItems="center">
-                <Heading size="lg" textAlign='center'>Become Contributor</Heading>
+                <Heading size="lg" textAlign='center'>Join the Explorers</Heading>
                 <Box
                   display="flex"
                   justifyContent="center"
