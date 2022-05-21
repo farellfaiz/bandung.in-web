@@ -481,7 +481,7 @@ const App = () => {
                         Explorer
                       </Button>
                     </Link>
-                    <Link href='https://github.com/farellfaiz/bandung-in/' isExternal>
+                    <Link href='https://github.com/farellfaiz/bandung.in/' isExternal>
                       <Button
                         variant="solid"
                         size="md"
