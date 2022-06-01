@@ -44,7 +44,7 @@ const DownloadButton = ({ text }) => {
         </MenuButton>
         <MenuList>
           <MenuGroup title='Download mobile app'>
-            <Link href='https://github.com/farellfaiz/bandung.in/releases/download/v1.0.1/bandung.in_v1.0.1.apk'>
+            <Link href='https://github.com/farellfaiz/bandung.in/releases/download/v1.1.0/bandung.in_v1.1.0.apk'>
               <MenuItem minH='48px'>
                 <Icon as={AiFillAndroid} />
                 <Text ml='3'>Android</Text>
@@ -421,7 +421,7 @@ const App = () => {
                     fontStyle="italic"
                     color="blackAlpha.600"
                   >
-                    become our sponsor
+                    be our sponsor
                   </Text>
                   <Stack spacing={2} isInline>
                     <Link href='https://saweria.co/bandungin' isExternal>
@@ -458,7 +458,7 @@ const App = () => {
             />
             <Box>
               <Stack spacing={6} alignItems="center">
-                <Heading size="lg" textAlign='center'>Become Contributor</Heading>
+                <Heading size="lg" textAlign='center'>Join the Explorers</Heading>
                 <Box
                   display="flex"
                   justifyContent="center"
