@@ -32,14 +32,15 @@ import { HiOutlineCash, HiCode } from 'react-icons/hi'
 import { FaChevronRight, FaHandHoldingUsd, FaUsers, FaMoneyBillWave } from 'react-icons/fa'
 import { MdEmail } from 'react-icons/md'
 import { IoFootstepsSharp } from 'react-icons/io5'
+import { FaVoteYea } from 'react-icons/fa'
 
-const DownloadButton = () => {
+const DownloadButton = ({ text }) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   return (
     <>
       <Menu>
         <MenuButton shadow='md' as={Button} leftIcon={<DownloadIcon/>} rightIcon={<ChevronDownIcon /> }>
-          Download
+          {text}
         </MenuButton>
         <MenuList>
           <MenuGroup title='Download mobile app'>
@@ -116,72 +117,25 @@ const App = () => {
         backgroundColor="whiteAlpha.500"
         bgGradient="linear(to top left, blackAlpha.50,white,facebook.100)"
       >
-        <Box
-          backgroundColor="#31302E"
-          display="flex"
-          justifyContent="space-between"
-          alignItems="center"
-          bgGradient="linear(to left, #535250,#31302E)"
-          pt={4}
-          pb={4}
-          pl={10}
-          pr={10}
-        >
-          <Image
-            height="50px"
-            width="50px"
-            src="https://github.com/farellfaiz/bandung.in/blob/master/assets/icon-white.png?raw=true"
-          />
-          <DownloadButton />
-        </Box>
-        <Box
-          display="flex"
-          justifyContent="space-between"
-          pt={10}
-          pr={10}
-          pl={10}
-          flexDirection={{ base: 'column-reverse', md: 'row' }}
-        >
+        <Box minH={{ base: '70px', md: '650px' }} w='100vw' h='100vh'>
           <Box
-            width={{ base: '100%', md: '50%' }}
+            backgroundColor="#31302E"
             display="flex"
-            justifyContent="center"
+            justifyContent="space-between"
             alignItems="center"
+            bgGradient="linear(to left, #535250,#31302E)"
+            pt={4}
+            pb={4}
+            pl={10}
+            pr={10}
           >
             <Image
-              width={230}
-              src="https://github.com/farellfaiz/bandung.in-web/blob/master/public/mockup-bandung.in.png?raw=true"
+              height="50px"
+              width="50px"
+              src="https://github.com/farellfaiz/bandung.in/blob/master/assets/icon-white.png?raw=true"
             />
-          </Box>
-          <Box width={{ base: '100%', md: '50%' }} lineHeight="normal">
-            <Image
-              height="100px"
-              width="100px"
-              src="https://github.com/farellfaiz/bandung.in/blob/master/assets/icon.png?raw=true"
-              mt={4}
-              mb={4}
-              ml={{ base: 'auto', md: '-20px' }}
-              mr='auto'
-            />
-            <Heading size="lg" mb={2}>
-              Introducing, Bandung.in
-            </Heading>
-            <Heading size="sm" mb={2}>
-              Your all-in-one needs in Bandung
-            </Heading>
-            <Text pb={4}>
-              Bandung.in is a mobile application that helps the citizens of
-              Bandung to meet their various needs easily, especially for
-              immigrants and nomads.{' '}
-            </Text>
-            <Text pb={8}>
-              This application has various features, especially in the geospatial
-              field considering that this application was developed by students
-              from the Faculty of Earth Science and Technology, Bandung Institute
-              of Technology.
-            </Text>
-            <Box display="flex" justifyContent={{ base: 'center', md: 'flex-start' }} alignItems="center" mb={8}>
-              <DownloadButton />
+            <Box>
+              <DownloadButton text='Download' />
               <Menu>
                 <MenuButton shadow='md' ml={3} as={Button}  rightIcon={<ChevronDownIcon /> }  >
                   <Icon as={AiFillGithub} />
@@ -204,7 +158,68 @@ const App = () => {
                 </MenuList>
               </Menu>
             </Box>
-            <Text color='blackAlpha.500' fontStyle='italic' mb={10} size='sm'>Allow install from unknown source and install anyway if Play Protect warning appears.</Text>
+          </Box>
+          <Box
+            display="flex"
+            justifyContent="space-between"
+            pt={10}
+            pr={10}
+            pl={10}
+            flexDirection={{ base: 'column-reverse', md: 'row' }}
+          >
+            <Box
+              width={{ base: '100%', md: '50%' }}
+              display="flex"
+              justifyContent="center"
+              alignItems="center"
+            >
+              <Image
+                width={230}
+                src="https://github.com/farellfaiz/bandung.in-web/blob/master/public/mockup-bandung.in.png?raw=true"
+              />
+            </Box>
+            <Box width={{ base: '100%', md: '50%' }} lineHeight="normal">
+              <Image
+                height="100px"
+                width="100px"
+                src="https://github.com/farellfaiz/bandung.in/blob/master/assets/icon.png?raw=true"
+                mt={4}
+                mb={4}
+                ml={{ base: 'auto', md: '-20px' }}
+                mr='auto'
+              />
+              <Heading size="lg" mb={2}>
+                Introducing, Bandung.in
+              </Heading>
+              <Heading size="sm" mb={2}>
+                Your all-in-one needs in Bandung
+              </Heading>
+              <Text pb={4}>
+                Bandung.in is a mobile application that helps the citizens of
+                Bandung to meet their various needs easily, especially for
+                immigrants and nomads.{' '}
+              </Text>
+              <Text pb={8}>
+                This application has various features, especially in the geospatial
+                field considering that this application was developed by students
+                from the Faculty of Earth Science and Technology, Bandung Institute
+                of Technology.
+              </Text>
+              <Box display="flex" justifyContent={{ base: 'center', md: 'flex-start' }} alignItems="center" mb={8}>
+                <DownloadButton text='Download' />
+                <Link href='https://virtualearth.fitb.itb.ac.id/e-voting/' isExternal>
+                  <Button shadow='md' ml={3} bg='black' color='white' _active={{ bg: 'blackAlpha.900' }} _hover={{ bg: 'blackAlpha.700' }} rightIcon={<ArrowForwardIcon />} leftIcon={<FaVoteYea />}  mr={3}>
+                    Vote
+                  </Button>
+                </Link>
+              </Box>
+              <Text color='blackAlpha.500' fontStyle='italic' mb={10} size='sm'>Allow install from unknown source and install anyway if Play Protect warning appears.</Text>
+            </Box>
+          </Box>
+        </Box>
+        <Box w='100%' py='50px' bg='#21252B' display='flex' justifyContent='center' alignItems='center'>
+          <Box w="80%" maxW='560px' h='320px'>
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/8ZgstC2tw48?controls=0&amp;rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </Box>
         </Box>
         <Box>
