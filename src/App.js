@@ -68,7 +68,7 @@ const DownloadButton = ({ text }) => {
       <Modal isOpen={isOpen} onClose={onClose} size='md' >
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader><Icon as={AiFillApple} mr={2} /> Download for iOS</ModalHeader>
+          <ModalHeader><Icon as={AiFillApple} mr={2} /> Download for iOS (Only available on Earth Expo @ITB)</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
             <Box flex='1' px={4}>
