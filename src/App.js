@@ -529,7 +529,7 @@ const App = () => {
             <Image
               height="100px"
               width="100px"
-              src="https://massabumi21.id/img/logo.png"
+              src="https://massabumi21.vercel.app/img/logo.png"
             />
           </Box>
           <Box>
